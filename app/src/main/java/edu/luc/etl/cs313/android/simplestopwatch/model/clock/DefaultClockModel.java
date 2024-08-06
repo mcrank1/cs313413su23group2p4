@@ -34,18 +34,26 @@ public class DefaultClockModel implements ClockModel {
     @Override
     public void start() {
         timer = new Timer();
+        startTime = System.currentTimeMillis();
+
 
         // The clock model runs onTick every 1000 milliseconds
         timer.schedule(new TimerTask() {
             @Override public void run() {
                 // fire event
                 listener.onTick();
+                elapsedTime += System.currentTimeMillis() - startTime;
             }
-        }, /*initial delay*/ 1000, /*periodic delay*/ 1000);
+        }, /*initial delay*/ 1000 - (elapsedTime % 1000), /*periodic delay*/ 1000);
     }
 
     @Override
     public void stop() {
-        timer.cancel();
+        if (timer != null) {
+            timer.cancel();
+
+            //calculate the total elapsed time by subtracting startTime from elapsedtime
+            elapsedTime = System.currentTimeMillis() - startTime;
+        }
     }
 }
