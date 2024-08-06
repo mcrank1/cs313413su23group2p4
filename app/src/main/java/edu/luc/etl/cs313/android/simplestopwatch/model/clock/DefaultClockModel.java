@@ -12,9 +12,19 @@ public class DefaultClockModel implements ClockModel {
 
     // TODO make accurate by keeping track of partial seconds when canceled etc.
 
+
     private Timer timer;
 
     private TickListener listener;
+
+    //track the start time of the timer in milliseconds
+    private long startTime;
+
+    //track the time in miliseconds when the timer is stopped
+    private long elapsedTime;
+    public DefaultClockModel() {
+        this.elapsedTime = 0;
+    }
 
     @Override
     public void setTickListener(final TickListener listener) {

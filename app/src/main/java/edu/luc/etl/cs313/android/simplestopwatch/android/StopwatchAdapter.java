@@ -55,7 +55,7 @@ public class StopwatchAdapter extends Activity implements StopwatchModelListener
         model.start();
     }
 
-    // TODO remaining lifecycle methods
+    // remaining lifecycle methods
     @Override
     protected void onResume() {
         super.onResume();
