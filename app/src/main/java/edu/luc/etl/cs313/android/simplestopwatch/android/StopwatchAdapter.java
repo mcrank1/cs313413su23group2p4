@@ -56,6 +56,23 @@ public class StopwatchAdapter extends Activity implements StopwatchModelListener
     }
 
     // TODO remaining lifecycle methods
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
 
     /**
      * Updates the seconds and minutes in the UI.
