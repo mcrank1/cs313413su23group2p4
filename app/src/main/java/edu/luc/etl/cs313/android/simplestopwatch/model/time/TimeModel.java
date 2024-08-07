@@ -10,6 +10,6 @@ public interface TimeModel {
     void resetRuntime();
     void incRuntime();
     int getRuntime();
-    void setLaptime();
-    int getLaptime();
+    // void setLaptime();
+    // int getLaptime();
 }
