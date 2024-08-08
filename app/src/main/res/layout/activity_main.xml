@@ -22,6 +22,9 @@
          TODO Why can't I define textSize and textStyle
     	 in the timer container and have it inherited
     	 by the TextViews?
+
+    	 You cannot define textSize and textStyle because of the way android handles attributes.
+    	 textSize and textStyle attributes are not inherited.
     -->
 
     <RelativeLayout
