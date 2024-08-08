@@ -163,5 +163,6 @@ public class DefaultStopwatchStateMachine implements StopwatchStateMachine {
         } catch (final IOException ex) {
             throw new RuntimeException(ex);
         }
+
     }
 }
