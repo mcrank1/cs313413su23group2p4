@@ -52,13 +52,13 @@
                     android:textStyle="bold" />
         -->
 
-                <TextView
-                    android:id="@+id/seconds"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/seconds"
-                    android:textSize="80sp"
-                    android:textStyle="bold" />
+        <TextView
+            android:id="@+id/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seconds"
+            android:textSize="80sp"
+            android:textStyle="bold" />
                     <!--android:layout_toRightOf="@id/colon"-->
             </RelativeLayout>
 
@@ -86,4 +86,12 @@
                 -->
             </RelativeLayout>
 
-        </RelativeLayout>
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+</RelativeLayout>
