@@ -3,6 +3,8 @@ package edu.luc.etl.cs313.android.simplestopwatch.model.clock;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.*; // for testing, remove when done
+
 /**
  * An implementation of the internal clock.
  *
@@ -44,7 +46,7 @@ public class DefaultClockModel implements ClockModel {
                 listener.onTick();
                 elapsedTime += System.currentTimeMillis() - startTime;
             }
-        }, /*initial delay*/ 1000 - (elapsedTime % 1000), /*periodic delay*/ 1000);
+        }, /*initial delay*/ speed - (elapsedTime % speed), /*periodic delay*/ speed);
     }
 
     @Override

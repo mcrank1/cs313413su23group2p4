@@ -9,22 +9,28 @@ class StoppedState implements StopwatchState {
     }
 
     private final StopwatchSMStateView sm;
+    private long lastClick=0;
 
-    @Override
-    public void onStartStop() {
-        sm.actionStart();
-        sm.toRunningState();
+    public void setLastClick(){
+        lastClick=System.currentTimeMillis();
     }
 
     @Override
-    public void onLapReset() {
-        sm.actionReset();
-        sm.toStoppedState();
+    public void onButton() {
+        sm.actionStart();
+        sm.actionInc(); // increase the counter
+        lastClick=System.currentTimeMillis();
     }
 
     @Override
     public void onTick() {
-        throw new UnsupportedOperationException("onTick");
+        /*
+        TODO if 3 seconds since last button click
+        */
+        if(sm.getTime()==99 || System.currentTimeMillis()-lastClick>=3000){
+            sm.actionBeep();
+            sm.toRunningState();
+        }
     }
 
     @Override
